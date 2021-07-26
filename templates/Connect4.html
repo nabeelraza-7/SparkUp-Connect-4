@@ -1,0 +1,87 @@
+{% extends 'Base.html' %}
+
+{% block head %}
+<title>Connect 4</title>
+<link rel="stylesheet" href="../static/css/MyCSS.css">
+{% endblock head %}
+
+{% block HomeClass %}
+class="nav-link"
+{% endblock HomeClass %}
+
+{% block ProfileClass %}
+class="nav-link"
+{% endblock ProfileClass %}
+
+{% block GameClass %}
+class="nav-link dropdown-toggle active"
+{% endblock GameClass %}
+
+{% block TicTacClass %} 
+class="dropdown-item"
+{% endblock TicTacClass %}
+
+{% block ConnectClass %} 
+class="dropdown-item disabled"
+{% endblock ConnectClass %}
+
+{% block body %}
+    <h3 id="TopHeading"><em>Connect 4</em></h3>
+    <div id="PlayArea">
+        <div id="Row-0" class="PlayRow">
+            <div id="Element-0" class="PlayElement"></div>
+            <div id="Element-1" class="PlayElement"></div>
+            <div id="Element-2" class="PlayElement"></div>
+            <div id="Element-3" class="PlayElement"></div>
+            <div id="Element-4" class="PlayElement"></div>
+            <div id="Element-5" class="PlayElement"></div>
+            <div id="Element-6" class="PlayElement"></div>
+        </div>
+        <div id="Row-1" class="PlayRow">
+            <div id="Element-7" class="PlayElement"></div>
+            <div id="Element-8" class="PlayElement"></div>
+            <div id="Element-9" class="PlayElement"></div>
+            <div id="Element-10" class="PlayElement"></div>
+            <div id="Element-11" class="PlayElement"></div>
+            <div id="Element-12" class="PlayElement"></div>
+            <div id="Element-13" class="PlayElement"></div>
+        </div>
+        <div id="Row-2" class="PlayRow">
+            <div id="Element-14" class="PlayElement"></div>
+            <div id="Element-15" class="PlayElement"></div>
+            <div id="Element-16" class="PlayElement"></div>
+            <div id="Element-17" class="PlayElement"></div>
+            <div id="Element-18" class="PlayElement"></div>
+            <div id="Element-19" class="PlayElement"></div>
+            <div id="Element-20" class="PlayElement"></div>
+        </div>
+        <div id="Row-3" class="PlayRow">
+            <div id="Element-21" class="PlayElement"></div>
+            <div id="Element-22" class="PlayElement"></div>
+            <div id="Element-23" class="PlayElement"></div>
+            <div id="Element-24" class="PlayElement"></div>
+            <div id="Element-25" class="PlayElement"></div>
+            <div id="Element-26" class="PlayElement"></div>
+            <div id="Element-27" class="PlayElement"></div>
+        </div>
+        <div id="Row-4" class="PlayRow">
+            <div id="Element-28" class="PlayElement"></div>
+            <div id="Element-29" class="PlayElement"></div>
+            <div id="Element-30" class="PlayElement"></div>
+            <div id="Element-31" class="PlayElement"></div>
+            <div id="Element-32" class="PlayElement"></div>
+            <div id="Element-33" class="PlayElement"></div>
+            <div id="Element-34" class="PlayElement"></div>
+        </div>
+        <div id="Row-5" class="PlayRow">
+            <div id="Element-35" class="PlayElement"></div>
+            <div id="Element-36" class="PlayElement"></div>
+            <div id="Element-37" class="PlayElement"></div>
+            <div id="Element-38" class="PlayElement"></div>
+            <div id="Element-39" class="PlayElement"></div>
+            <div id="Element-40" class="PlayElement"></div>
+            <div id="Element-41" class="PlayElement"></div>
+        </div>
+    </div>
+
+{% endblock body %}

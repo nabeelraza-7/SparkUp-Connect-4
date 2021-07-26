@@ -1,0 +1,66 @@
+:root {
+  --HColor: rgb(248,248,83);
+  --FColor: yellow;
+  --TColor: rgb(174,174,0);
+}
+
+#TopHeading {
+  text-align: center;
+  padding: 15px;
+}
+
+#PlayArea {
+  background-color: rgb(0,0,0);
+  padding: 30px;
+  align-self: center;
+  text-align: center;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 3%;
+  margin: auto;
+}
+
+.PlayRow {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+.PlayElement {
+  width: 80px;
+  height: 80px;
+  background-color: white;
+  display: inline-block;
+  border: var(--TColor) solid 2px;
+  margin: 2px;
+  border-radius: 50%;
+}
+
+@media (max-width: 576px) {
+  .PlayElement {
+    width: 55px;
+    height: 55px;
+    background-color: white;
+    display: inline-block;
+    border: var(--TColor) solid 2px;
+    margin: 2px;
+    border-radius: 50%;
+  }
+}
+
+@media (max-width: 380px) {
+  .PlayElement {
+    width: 35px;
+    height: 35px;
+    background-color: white;
+    display: inline-block;
+    border: var(--TColor) solid 2px;
+    margin: 1.5px;
+    border-radius: 50%;
+  }
+}
+
+.PlayElement:hover {
+  background-color: var(--HColor);
+}
+
