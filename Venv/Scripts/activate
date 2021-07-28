@@ -44,7 +44,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV='C:\Users\ikram\Desktop\MUsmanTahir\SparkUp Connect 4'
+VIRTUAL_ENV='C:\Users\ali\OneDrive\Desktop\MUsmanTahir\Github Repo\SparkUp-Connect-4\Venv'
 if ([ "$OSTYPE" = "cygwin" ] || [ "$OSTYPE" = "msys" ]) && $(command -v cygpath &> /dev/null) ; then
     VIRTUAL_ENV=$(cygpath -u "$VIRTUAL_ENV")
 fi

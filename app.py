@@ -1,5 +1,7 @@
 from flask import Flask, redirect, url_for, render_template, request, session
 import pandas as pd
+from Connect4 import Connect_4 as C4
+from bs4 import BeautifulSoup as BS
 
 app = Flask(__name__)
 app.secret_key = 'MyCodedData'
@@ -12,7 +14,7 @@ def start():
 def login():
     if 'user' in session:
         usr = session['user']
-        return redirect(url_for('home'))
+        return redirect(url_for('home', usr = usr))
     else:
         if request.method=='POST':
             usr = request.form['usrname']
@@ -21,7 +23,7 @@ def login():
             # try:
             if str(lg_data.iloc[lg_data[lg_data['username']==usr].index.values[0]]['password']) == pswrd:
                 session['user'] = usr
-                return redirect(url_for('home'))
+                return redirect(url_for('home', usr = usr))
             else:
                 print(type(lg_data.iloc[lg_data[lg_data['username']==usr].index.values[0]]['password']))
                 print(type(pswrd))
@@ -32,7 +34,7 @@ def login():
             return render_template('login.html')
 
 @app.route('/signup', methods=['GET', 'POST'])
-def signup():
+def signup(usr):
     if request.method=='POST':
         usr = request.form['usrname']
         fname = request.form['fname']
@@ -54,8 +56,8 @@ def signup():
 # if 'user' in session:
 #     usr = session['user']
 
-@app.route(f'/home', methods=['GET', 'POST'])
-def home():
+@app.route('/<usr>', methods=['GET', 'POST'])
+def home(usr):
     if 'user' in session:
         usr = session['user']
         return render_template('Home.html', user=usr)
@@ -64,6 +66,8 @@ def home():
 
 @app.route('/Connect4', methods=['GET', 'POST'])
 def Connect4():
+    soup = BS('Connect4.html')
+    soup.find('#')
     return render_template('Connect4.html')
 
 @app.route('/TicTac', methods=['GET', 'POST'])
@@ -77,7 +81,7 @@ def Profile():
 @app.route('/Logout', methods=['GET', 'POST'])
 def logout():
     session.clear()
-    return redirect(url_for('home'))
+    return redirect(url_for('home', usr = ""))
 
 if __name__ == '__main__':
     app.run(debug=True)

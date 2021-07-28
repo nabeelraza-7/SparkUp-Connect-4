@@ -57,7 +57,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV 'C:\Users\ikram\Desktop\MUsmanTahir\SparkUp Connect 4'
+set -gx VIRTUAL_ENV 'C:\Users\ali\OneDrive\Desktop\MUsmanTahir\Github Repo\SparkUp-Connect-4\Venv'
 
 # https://github.com/fish-shell/fish-shell/issues/436 altered PATH handling
 if test (echo $FISH_VERSION | head -c 1) -lt 3

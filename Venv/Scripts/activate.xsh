@@ -28,7 +28,7 @@ def _deactivate(args):
 _deactivate(["nondestructive"])
 aliases["deactivate"] = _deactivate
 
-$VIRTUAL_ENV = r"C:\Users\ikram\Desktop\MUsmanTahir\SparkUp Connect 4"
+$VIRTUAL_ENV = r"C:\Users\ali\OneDrive\Desktop\MUsmanTahir\Github Repo\SparkUp-Connect-4\Venv"
 
 $_OLD_VIRTUAL_PATH = $PATH
 $PATH = $PATH[:]

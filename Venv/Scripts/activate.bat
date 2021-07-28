@@ -1,6 +1,6 @@
 @echo off
 
-set "VIRTUAL_ENV=C:\Users\ikram\Desktop\MUsmanTahir\SparkUp Connect 4"
+set "VIRTUAL_ENV=C:\Users\ali\OneDrive\Desktop\MUsmanTahir\Github Repo\SparkUp-Connect-4\Venv"
 
 if defined _OLD_VIRTUAL_PROMPT (
     set "PROMPT=%_OLD_VIRTUAL_PROMPT%"
