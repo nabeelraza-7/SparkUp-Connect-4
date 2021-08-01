@@ -56,7 +56,7 @@ class Connect_4:
     #     return Mat
 
     def WinCheck(self):
-        if Connect_4.Turns>3:
+        if Connect_4.Turns>2:
             key1 = np.nan
             key2 = np.nan
             countR = 0
@@ -67,9 +67,8 @@ class Connect_4:
                         if self.board[i, j] == key1:
                             countR += 1
                             if countR == 4:
-                                self.show()
                                 print('Player', key1,'Won')
-                                sys.exit()
+                                # sys.exit()
                         else:
                             countR = 1
                             key1 = self.board[i, j]
@@ -79,18 +78,16 @@ class Connect_4:
                         if self.board[j, i] == key2:
                             countD += 1
                             if countD == 4:
-                                self.show()
                                 print('Player', key2,'Won')
-                                sys.exit()
+                                # sys.exit()
                         else:
                             countD = 1
                             key2 = self.board[i, j]
                     else:
                         countD = 0
-            print(countR, countD)
 
 
-A = Connect_4()
+A = None
 
 # A.show()
 

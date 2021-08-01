@@ -66,6 +66,8 @@ def home(usr):
 
 @app.route('/Connect4', methods=['GET', 'POST'])
 def Connect4():
+    global A
+    A = Connect_4()
     # soup = BS('Connect4.html')
     # soup.find('#')
     return render_template('Connect4.html')
@@ -95,9 +97,10 @@ def Turns(ID, color):
     # print(x, y)
     if color == "red":
         A.P1Turn((x, y))
+        A.show()
     else:
         A.P2Turn((x, y))
-    A.show()
+        A.show()
     return "n"
 
 

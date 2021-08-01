@@ -2,6 +2,27 @@
 
 {% block head %}
 <title>{{Player}} Won</title>
+<style>
+    body{
+        text-align: center;
+    }
+    #Winner{
+        padding-top: 20%;
+        font-size: 70px;
+        font-family:'Times New Roman', Times, serif
+    }
+    #cong{
+        font-size: 35px;
+    }
+    .b{
+        display: inline-block;
+        padding-top: 60px;
+        padding-left: 15px;
+    }
+    a{
+        text-decoration: none;
+    }
+</style>
 {% endblock head %}
 
 {% block HomeClass %}
@@ -32,14 +53,20 @@ class="dropdown-item"
     Congratulations
 </div>
 <div id="btns">
-    <div class="playAgain">
-        Play Again
+    <div id="playAgain" class="b">
+        <a href="/Connect4">
+            Play Again
+        </a>
     </div>
-    <div class="home">
-        Home
+    <div id="home" class="b">
+        <a href="/">
+            Home
+        </a>
     </div>
-    <div class="logout">
-        Logout
+    <div id="logout" class="b">
+        <a href="/Logout">
+            Logout
+        </a>
     </div>
 </div>
 
