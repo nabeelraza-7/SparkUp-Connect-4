@@ -1,3 +1,4 @@
+from flask import redirect, url_for
 import numpy as np
 import pandas as pd
 import sys
@@ -17,12 +18,12 @@ class Connect_4:
     def P1Turn(self, pos):
         # try:
         #     print(self.board[pos[0], pos[1]])
+            Connect_4.Turns += 1
             if not self.board[pos[0], pos[1]] in [1, 2]:
                 self.board[pos[0], pos[1]] = 1
-                self.WinCheck()
+                return self.WinCheck()
             # else:
             #     raise Exception("Wrong input")
-            Connect_4.Turns += 1
         # except:
         #     print("Wrong input, Try again", self.board[pos[0], pos[1]])
         #     self.show()
@@ -32,7 +33,7 @@ class Connect_4:
         # try:
             if not self.board[pos[0], pos[1]] in [1, 2]:
                 self.board[pos[0], pos[1]] = 2
-                self.WinCheck()
+                return self.WinCheck()
         #     else:
         #         raise Exception("Wrong input, Try again...")
         # except:
@@ -68,6 +69,8 @@ class Connect_4:
                             countR += 1
                             if countR == 4:
                                 print('Player', key1,'Won')
+                                return int(key1)
+                                return redirect(f'/wonPlayer{int(key1)}')
                                 # sys.exit()
                         else:
                             countR = 1
@@ -79,12 +82,15 @@ class Connect_4:
                             countD += 1
                             if countD == 4:
                                 print('Player', key2,'Won')
+                                return int(key2)
+                                return redirect(url_for('Won', player = f'Player {key2}'))
                                 # sys.exit()
                         else:
                             countD = 1
                             key2 = self.board[i, j]
                     else:
                         countD = 0
+        return ""
 
 
 A = None

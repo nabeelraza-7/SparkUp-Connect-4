@@ -1,4 +1,4 @@
-from flask import Flask, redirect, url_for, render_template, request, session
+from flask import Flask, render_template, request, session
 import pandas as pd
 from Connect4 import *
 # from bs4 import BeautifulSoup as BS
@@ -85,7 +85,7 @@ def logout():
     session.clear()
     return redirect(url_for('home', usr = ""))
 
-@app.route("/won<player>")
+@app.route("/won<player>", methods = ['GET', 'POST'])
 def Won(player):
     return render_template('Won.html', Player = player)
 
@@ -96,11 +96,15 @@ def Turns(ID, color):
     y = i%7
     # print(x, y)
     if color == "red":
-        A.P1Turn((x, y))
+        key = A.P1Turn((x, y))
         A.show()
     else:
-        A.P2Turn((x, y))
+        key = A.P2Turn((x, y))
         A.show()
+    if key in [1, 2]:
+        # Won(f'Player {key}')
+        return redirect(f'/wonPlayer%20{key}')
+        return redirect(url_for('Won', player = f'Player {key}'), code = 200)
     return "n"
 
 
