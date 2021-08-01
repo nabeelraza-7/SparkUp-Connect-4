@@ -1,6 +1,6 @@
 from flask import Flask, redirect, url_for, render_template, request, session
 import pandas as pd
-from Connect4 import Connect_4 as C4
+from Connect4 import *
 from bs4 import BeautifulSoup as BS
 
 app = Flask(__name__)
@@ -82,6 +82,22 @@ def Profile():
 def logout():
     session.clear()
     return redirect(url_for('home', usr = ""))
+
+
+T = True
+@app.route("/Turn/<ID>/<color>")
+def Turns(ID, color):
+    i = int(ID)
+    x = i//7
+    y = i%7
+    # print(x, y)
+    if color == "red":
+        A.P1Turn((x, y))
+    else:
+        A.P2Turn((x, y))
+    A.show()
+    return "n"
+
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -27,8 +27,8 @@
 }
 
 .PlayElement {
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 60px;
   background-color: white;
   display: inline-block;
   border: var(--TColor) solid 2px;
@@ -63,4 +63,3 @@
 .PlayElement:hover {
   background-color: var(--HColor);
 }
-

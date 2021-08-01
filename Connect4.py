@@ -5,10 +5,11 @@ import sys
 class Connect_4:
     Turns = 0
 
-    def __init__(self, size = (6, 7)):
+    def __init__(self, size = (7, 7), connect = 4):
         self.board = np.empty(size)
         self.board[:] = np.nan
-        print(self.board)
+        self.connectDots = connect
+        # print(self.board)
     
     def show(self):
         print(self.board)
@@ -23,8 +24,9 @@ class Connect_4:
                 raise Exception("Wrong input")
             Connect_4.Turns += 1
         except:
-            print("Wrong input, Try again")
-            self.P1Turn((int(input("1: Enter row: ")), int(input("1: Enter col: "))))
+            print("Wrong input, Try again", self.board[pos[0], pos[1]])
+            self.show()
+            # self.P1Turn((int(input("1: Enter row: ")), int(input("1: Enter col: "))))
 
     def P2Turn(self, pos):
         try:
@@ -34,8 +36,24 @@ class Connect_4:
             else:
                 raise Exception("Wrong input, Try again...")
         except:
-            print("Wrong input, Try again")
-            self.P2Turn((int(input("2: Enter row: ")), int(input("2: Enter col: "))))
+            print("Wrong input, Try again", self.board[pos[0], pos[1]])
+            self.show()
+            # self.P2Turn((int(input("2: Enter row: ")), int(input("2: Enter col: "))))
+
+    # def TiltCheck(self):
+    #     i, j = 0, 3
+    #     while True:
+    #         if j<6:
+    #             j+=1
+    #         elif i<4:
+    #             i+=1
+    #         else:
+    #             break
+    #         I, J = i, j
+    #         while True:
+    #             print()
+    #             break
+    #     return Mat
 
     def WinCheck(self):
         if Connect_4.Turns>3:
@@ -71,10 +89,13 @@ class Connect_4:
                         countD = 0
             print(countR, countD)
 
-# A = Connect_4()
+
+A = Connect_4()
+
+# A.show()
 
 # while True:
-#     A.P1Turn((int(input("1: Enter row: ")), int(input("1: Enter col: "))))
-#     A.show()
-#     A.P2Turn((int(input("2: Enter row: ")), int(input("2: Enter col: "))))
-#     A.show()
+    # A.P1Turn((int(input("1: Enter row: ")), int(input("1: Enter col: "))))
+    # A.show()
+    # A.P2Turn((int(input("2: Enter row: ")), int(input("2: Enter col: "))))
+    # A.show()
