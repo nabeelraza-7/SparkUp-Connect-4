@@ -15,29 +15,29 @@ class Connect_4:
         print(self.board)
 
     def P1Turn(self, pos):
-        try:
-            print(self.board[pos[0], pos[1]])
+        # try:
+        #     print(self.board[pos[0], pos[1]])
             if not self.board[pos[0], pos[1]] in [1, 2]:
                 self.board[pos[0], pos[1]] = 1
                 self.WinCheck()
-            else:
-                raise Exception("Wrong input")
+            # else:
+            #     raise Exception("Wrong input")
             Connect_4.Turns += 1
-        except:
-            print("Wrong input, Try again", self.board[pos[0], pos[1]])
-            self.show()
+        # except:
+        #     print("Wrong input, Try again", self.board[pos[0], pos[1]])
+        #     self.show()
             # self.P1Turn((int(input("1: Enter row: ")), int(input("1: Enter col: "))))
 
     def P2Turn(self, pos):
-        try:
+        # try:
             if not self.board[pos[0], pos[1]] in [1, 2]:
                 self.board[pos[0], pos[1]] = 2
                 self.WinCheck()
-            else:
-                raise Exception("Wrong input, Try again...")
-        except:
-            print("Wrong input, Try again", self.board[pos[0], pos[1]])
-            self.show()
+        #     else:
+        #         raise Exception("Wrong input, Try again...")
+        # except:
+        #     print("Wrong input, Try again", self.board[pos[0], pos[1]])
+        #     self.show()
             # self.P2Turn((int(input("2: Enter row: ")), int(input("2: Enter col: "))))
 
     # def TiltCheck(self):

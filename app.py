@@ -1,7 +1,7 @@
 from flask import Flask, redirect, url_for, render_template, request, session
 import pandas as pd
 from Connect4 import *
-from bs4 import BeautifulSoup as BS
+# from bs4 import BeautifulSoup as BS
 
 app = Flask(__name__)
 app.secret_key = 'MyCodedData'
@@ -66,8 +66,8 @@ def home(usr):
 
 @app.route('/Connect4', methods=['GET', 'POST'])
 def Connect4():
-    soup = BS('Connect4.html')
-    soup.find('#')
+    # soup = BS('Connect4.html')
+    # soup.find('#')
     return render_template('Connect4.html')
 
 @app.route('/TicTac', methods=['GET', 'POST'])
