@@ -83,8 +83,10 @@ def logout():
     session.clear()
     return redirect(url_for('home', usr = ""))
 
+@app.route("/won<player>")
+def Won(player):
+    return render_template('Won.html', Player = player)
 
-T = True
 @app.route("/Turn/<ID>/<color>")
 def Turns(ID, color):
     i = int(ID)

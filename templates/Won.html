@@ -1,7 +1,7 @@
 {% extends 'Base.html' %}
 
 {% block head %}
-<title>Profile</title>
+<title>{{Player}} Won</title>
 {% endblock head %}
 
 {% block HomeClass %}
@@ -23,3 +23,24 @@ class="dropdown-item"
 {% block ConnectClass %} 
 class="dropdown-item"
 {% endblock ConnectClass %}
+
+{% block body %}
+<div id="Winner">
+    {{Player}} Won
+</div>
+<div id="cong">
+    Congratulations
+</div>
+<div id="btns">
+    <div class="playAgain">
+        Play Again
+    </div>
+    <div class="home">
+        Home
+    </div>
+    <div class="logout">
+        Logout
+    </div>
+</div>
+
+{% endblock body %}
