@@ -1,7 +1,6 @@
-from flask import Flask, render_template, request, session
+from flask import Flask, render_template, request, session, jsonify
 import pandas as pd
 from Connect4 import *
-# from bs4 import BeautifulSoup as BS
 
 app = Flask(__name__)
 app.secret_key = 'MyCodedData'
@@ -68,8 +67,6 @@ def home(usr):
 def Connect4():
     global A
     A = Connect_4()
-    # soup = BS('Connect4.html')
-    # soup.find('#')
     return render_template('Connect4.html')
 
 @app.route('/TicTac', methods=['GET', 'POST'])
@@ -94,7 +91,6 @@ def Turns(ID, color):
     i = int(ID)
     x = i//7
     y = i%7
-    # print(x, y)
     if color == "red":
         key = A.P1Turn((x, y))
         A.show()
@@ -102,10 +98,8 @@ def Turns(ID, color):
         key = A.P2Turn((x, y))
         A.show()
     if key in [1, 2]:
-        # Won(f'Player {key}')
-        return redirect(f'/wonPlayer%20{key}')
-        return redirect(url_for('Won', player = f'Player {key}'), code = 200)
-    return "n"
+        return jsonify(dict(redirect=f'Player {key}'))
+    return "aa"
 
 
 if __name__ == '__main__':

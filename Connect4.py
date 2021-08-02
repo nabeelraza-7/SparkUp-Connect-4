@@ -21,6 +21,7 @@ class Connect_4:
             Connect_4.Turns += 1
             if not self.board[pos[0], pos[1]] in [1, 2]:
                 self.board[pos[0], pos[1]] = 1
+                print(self.board[pos[0], pos[1]], "pin")
                 return self.WinCheck()
             # else:
             #     raise Exception("Wrong input")
@@ -87,7 +88,7 @@ class Connect_4:
                                 # sys.exit()
                         else:
                             countD = 1
-                            key2 = self.board[i, j]
+                            key2 = self.board[j, i]
                     else:
                         countD = 0
         return ""

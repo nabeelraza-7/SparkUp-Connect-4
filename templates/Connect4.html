@@ -37,9 +37,12 @@
         e.preventDefault()
         e = e || window.event;
         e = e.target || e.srcElement;
-        let a = e.id;
-        $.getJSON('/Turn/'+parseInt(a.slice(-2))+'/'+rs.getPropertyValue('--FColor'),
+        let T_ID = e.id;
+        // console.log(T_ID);
+        $.getJSON('/Turn/'+parseInt(T_ID.slice(-2))+'/'+rs.getPropertyValue('--FColor'),
             function(data) {
+                // console.log(data);
+                window.location.href = "won"+data.redirect
           //do nothing
         });
         return false;
